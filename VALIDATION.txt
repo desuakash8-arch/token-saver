@@ -1,0 +1,99 @@
+Token Saver 1.3.0 - current validation
+Date: November 2, 2026
+Environment: Windows, Python 3.14.6
+
+104 pytest tests passed. JavaScript syntax checks passed for app.js and
+optimizer.js. One upstream Starlette/httpx deprecation warning remains.
+
+Includes Groq GPT OSS 20B/120B rates, caching arithmetic, local-only estimates,
+generation limits, unsupported provider-count handling, and saved analyses.
+Browser checks covered Groq selection, comparison, the simplified optimizer,
+protected-snippet validation, readable styling, and mobile overflow fixes.
+Live model output quality is not covered by the mocked API tests.
+
+Historical validation records
+=============================
+
+Token Saver 1.2.0 - AI optimizer validation
+Date: November 2, 2026
+Environment: Windows, Python 3.14.6
+
+97 pytest tests passed (27 optimizer cases plus the existing 70 tests).
+JavaScript syntax checks passed for app.js and optimizer.js.
+One upstream Starlette/httpx deprecation warning remains.
+
+Groq calls used HTTP mocks: payload isolation, strict JSON schema, target-token
+savings, optimizer cost, break-even, no savings, protected literals/snippets,
+numeric additions/removals, missing usage, malformed/truncated responses,
+authentication errors, rate limits, timeout without retries, concurrent calls,
+validation, cross-origin protection, and no automatic history persistence.
+
+Isolated browser QA used a marked fixture response, never a live model:
+- 27 prompt tokens to 16: 11 saved (40.7%); actual local tokenizer counts.
+- Mock usage 800 input / 200 output: estimated $0.000240 optimizer cost.
+- Break-even 30 uses at the selected target rate.
+- JSON report export, apply with local analysis, undo, protected-snippet rejection,
+  stale result invalidation, and error/retry presentation passed.
+
+The actual app at port 8000 reports version 1.2.0 and Groq configured=false.
+No real API key was supplied, no live Groq request was made, and semantic
+quality/identical target outputs were not evaluated or guaranteed.
+User's existing prompt and model settings were preserved through the update.
+
+Previous release validation (historical):
+----------------------------------------
+Token Saver 1.1.0 - test report
+Date: November 2, 2026
+Environment: Windows, Python 3.14.6
+
+AUTOMATED TESTS
+70 pytest tests passed. Covers token counts, costs, model limits, Unicode,
+history, provider adapters, validation, healing and word alignment/filtering.
+One upstream Starlette/httpx deprecation warning.
+
+REAL EXAMPLES THROUGH THE LOCAL HTTP API
+10 prompts x 7 model presets = 70 successful analysis runs.
+10 word-breakdown checks passed.
+10 healing checks passed.
+10 invalid-input cases correctly rejected with HTTP 422.
+205-word pagination and filtering passed.
+History save, restore and deletion passed using a separate test database.
+
+Examples: greeting, photosynthesis, verbose email, Python code, SQL, Hindi and
+emoji, Chinese, JSON, quoted verbatim text, and long words/literal markup.
+Reusable prompts: examples/test_cases.json.
+Detailed results: Token-Saver-example-results.json beside the project ZIP.
+
+BROWSER CHECKS
+- Product title and branding are Token Saver.
+- Model comparison works across OpenAI, Anthropic and Google presets.
+- Word table displays counts and original token pieces, including Unicode.
+- Search, 2+ token filtering, and all three pages of a 205-word prompt work.
+- Quoted text stays unchanged when phrase shortening is enabled.
+- Changing a prompt removes old comparisons and prevents stale exports.
+- No JavaScript console errors in the final word-table checks.
+- Import, JSON/CSV export, history and responsive workflows were also exercised
+  in the initial release; updated exports are rechecked in 1.1.
+
+FIXES FOUND DURING TESTING
+- Single/curly quotes, lowercase SQL and verbatim instructions are protected.
+- Whitespace-only healing requests now fail validation.
+- Stale comparisons cannot be exported after editing the prompt.
+- Generated saved titles no longer split Unicode surrogate pairs.
+
+WORD COUNT EXAMPLE (o200k_base, in the displayed prompt)
+Hello                              1
+world!                             2
+Photosynthesis                     2
+antidisestablishmentarianism        6
+supercalifragilisticexpialidocious  10
+Namaste in Devanagari               3
+Globe emoji                        2
+
+LIMITATIONS
+- Claude/Gemini local totals are heuristic. Word boundaries are unavailable
+  without a bundled tokenizer; provider count APIs return totals.
+- No live provider calls: keys are not configured. Adapters use mocked HTTP tests.
+- Output and reasoning are user-selected budgets. No AI answers were generated.
+- Docker configuration is included but was not built here.
+- Synthetic test histories are excluded from the source archive.

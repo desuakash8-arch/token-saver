@@ -1,0 +1,15 @@
+{
+  "prompt": "Explain how a solar panel works in simple terms.",
+  "model_id": "gpt-5.4-mini",
+  "system_prompt": "Be clear and concise.",
+  "history": [],
+  "output_low": 128,
+  "output_expected": 256,
+  "output_high": 512,
+  "reasoning_tokens": 0,
+  "extra_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "calls": 1000,
+  "budget_usd": 10,
+  "count_mode": "local"
+}

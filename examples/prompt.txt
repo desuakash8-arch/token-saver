@@ -1,0 +1,8 @@
+Please write a helpful onboarding email in order to welcome new users to a personal finance app.
+
+
+The audience is university students who want to build better saving habits.  Keep the tone friendly, practical, and encouraging.
+
+For the purpose of making the next step clear, include one call to action to create their first savings goal.  Due to the fact that readers are busy, keep the email under 150 words.
+
+Return a subject line and the email body. Do not invent product features or make financial promises.

@@ -1,0 +1,13 @@
+services:
+  token-saver:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - token-saver-data:/app/data
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    restart: unless-stopped
+volumes:
+  token-saver-data:

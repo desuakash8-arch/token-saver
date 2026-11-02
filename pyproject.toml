@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "token-saver"
+version = "1.3.0"
+description = "Understand, compare, and reduce the token cost of your prompts."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.34,<1",
+  "tiktoken>=0.12,<1",
+  "httpx>=0.28,<1",
+  "python-dotenv>=1,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+token-saver = "token_saver.cli:main"
+
+[tool.setuptools.package-data]
+token_saver = ["models.json", "static/*"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["token_saver", "token_saver.*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

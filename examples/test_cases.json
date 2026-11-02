@@ -1,0 +1,12 @@
+[
+  {"name":"Simple greeting","prompt":"Hello world!"},
+  {"name":"School explanation","prompt":"Explain photosynthesis to a 10-year-old in three sentences."},
+  {"name":"Verbose marketing prompt","prompt":"Please    write a welcome email in order to introduce our study planner.\n\n\nDue to the fact that readers are busy, keep it under 100 words."},
+  {"name":"Python code","prompt":"Explain this code without changing its indentation:\n```python\ndef greet(name):\n    return f'Hello, {name}!'\n```"},
+  {"name":"SQL literal","prompt":"select 'in order to' as phrase;"},
+  {"name":"Hindi and emoji","prompt":"नमस्ते! मुझे सौर ऊर्जा के बारे में सरल हिंदी में समझाइए। 🌞🌏"},
+  {"name":"Chinese text","prompt":"请用简单的中文解释人工智能，并给出三个日常生活中的例子。"},
+  {"name":"JSON schema","prompt":"Return valid JSON matching this shape: {\"title\": \"string\", \"items\": [\"string\"]}. Do not add markdown."},
+  {"name":"Quoted verbatim text","prompt":"Please return exactly 'in order to' without changing the quoted text."},
+  {"name":"Long words and literal markup","prompt":"Explain antidisestablishmentarianism and supercalifragilisticexpialidocious. Treat <script>alert('example')</script> as literal text."}
+]
